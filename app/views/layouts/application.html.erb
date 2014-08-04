@@ -5,22 +5,24 @@
     <title><%= content_for?(:title) ? yield(:title) : "Learn Rails" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Learn Rails" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%# Modernizr is required for Zurb Foundation %>
+    <%= javascript_include_tag 'vendor/modernizr' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <style>
+    #map {
+        width: 100%;
+        height: 600px;
+    }
+</style>
   </head>
   <body>
     <header>
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
-      <%= render 'layouts/messages' %>
-      <%= yield %>
+       <%= render 'layouts/messages' %>
+       <%= yield %>
     </main>
-    <footer>
-      <%= render 'layouts/copyright' %>
-    </footer>
-    <script>
-      $('body').css({'background-color' : 'black'});
-    </script>
   </body>
 </html>

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
-
+gem 'geocoder'
+gem "nifty-generators", :group => :development
+gem 'mapbox-rails'
 # learn-rails
 gem 'activerecord-tableless'
 gem 'compass-rails', '~> 2.0.alpha.0'
@@ -53,3 +55,5 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'json'
+
+gem "mocha", group: :test
